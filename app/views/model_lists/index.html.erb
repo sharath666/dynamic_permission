@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Model Lists</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @model_lists.each do |model_list| %>
+      <tr>
+        <td><%= model_list.name %></td>
+        <td><%= link_to 'Show', model_list %></td>
+        <td><%= link_to 'Edit', edit_model_list_path(model_list) %></td>
+        <td><%= link_to 'Destroy', model_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Model List', new_model_list_path %>
